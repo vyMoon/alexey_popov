@@ -13,7 +13,7 @@
 // stringExpansion('3d332f2a') === 'dddffaa'
 
 // If there are two consecutive alphabetic characters then the first character has no effect on the one after it.
-// stringExpansion('abcde') === 'abcde'
+// c
 
 // Your code should be able to work for both lower and capital case letters.
 
@@ -21,7 +21,7 @@
 // that have two and more alphabetic character in a row after a digit,
 // and what should I do in this case.
 // but if we take a look at this examle 
-// stringExpansion('3d332f2a') === 'dddffaa' 
+// stringExpansion('abcde') === 'abcde'
 // we can gues that it is possible
 // So I decided to make only 3t into ttt in 3ty patter, for instance 
 
