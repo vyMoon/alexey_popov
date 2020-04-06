@@ -7,7 +7,14 @@
 // newArray4; // should return 50
 
 // 7 transform function
-// makes and returns array of function
+// I don't know should the functions takes the value form based array
+// and then rreturn this value always
+// So I deceded to make the function that returns values that are
+// in the base array at time when one of them rum.
+// so if we cahnge any value in the base array, the corresponding function
+// will return the new value
+// 
+// the function makes and returns array of function
 // every elemnt of the new array has the function that related to 
 // the value in the same position in passed array.
 

@@ -18,10 +18,9 @@ function toCamelCase(str) {
     // chose the separator into the string 
     // snd split the string into words
     var separator = dash > -1 ? '-' : '_';
-    var wordsArr = str.split(separator);
     // makes the response. 
     // compound the respond string and makes the first letter of each words capitalized exept the first one 
-    return wordsArr.reduce( function(response, el, index) {
-      return response + el.charAt(0).toUpperCase() + el.slice(1)
+    return str.split(separator).reduce( function(response, el) {
+      return response + el.charAt(0).toUpperCase() + el.slice(1);
     });
 }

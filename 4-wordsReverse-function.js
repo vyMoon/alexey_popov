@@ -9,9 +9,9 @@
 
 function wordsReverse(str) {
     // split the sentence into words
-    var wordsArr = str.split(' ')
-    // returns  the sentence with reversed words
+    var wordsArr = str.split(' ');
+    // returns the sentence with reversed words
     return wordsArr.map( function(el) {
-      return el.split('').reverse().join('')
-    }).join(' ')
-}
+      return el.split('').reverse().join('');
+    }).join(' ');
+};

@@ -8,12 +8,14 @@
 function countDown(num) {
     // if passed value can't be parsed to a number 
     // or if the passed value less than 0
-    if ( num < 0 || Number.isNaN( parseInt(num) ) ) {
-        return
-    }
-    // makes the record in the console 
-    // uses decrement
-    // uses reursion
-    console.log(num--);
-    countDown(num);
-}
+    if ( isNaN(num) )  {
+        return;
+    };
+    var counting = setInterval( function() {
+        if ( num >= 0) {
+          console.log(num--);
+        } else {
+          clearInterval(counting);
+        }
+    }, 1000);
+};

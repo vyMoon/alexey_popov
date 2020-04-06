@@ -18,7 +18,7 @@ function sum() {
     }
     // if there is only one element in the array return it
     if (numbers.length == 1) {
-        return numbers.pop()
+        return numbers.pop();
     }
     // adds the values of the elements using redcursion
     return numbers.pop() + sum(numbers);

@@ -14,7 +14,7 @@ function splitAndMerge(str, sp) {
     
     //split each words into letters
     wordsArr.forEach( function(el, index) {  
-      wordsArr[index] = el.split('')
+      wordsArr[index] = el.split('');
     });
 
     // join the letters with the passed separator
