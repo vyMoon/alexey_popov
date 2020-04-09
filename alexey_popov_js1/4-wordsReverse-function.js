@@ -8,10 +8,9 @@
 // 4 function wordsReverse
 
 function wordsReverse(str) {
-    // split the sentence into words
-    var wordsArr = str.split(' ');
-    // returns the sentence with reversed words
-    return wordsArr.map( function(el) {
-      return el.split('').reverse().join('');
-    }).join(' ');
+    return str.split(' ') // split the sentence into words
+            .map( function(el) {  // reverse every word
+              return el.split('').reverse().join('');
+            }) 
+            .join(' '); // and join them into sentence
 };

@@ -7,21 +7,32 @@
 // newArray4; // should return 50
 
 // 7 transform function
-// I don't know should the functions takes the value form based array
-// and then rreturn this value always
-// So I deceded to make the function that returns values that are
-// in the base array at the time when one of them rum.
-// so if we cahnge any value in the base array, the corresponding function
-// will return the new value
-// 
-// the function makes and returns array of function
-// every elemnt of the new array has the function that related to 
-// the value in the same position in passed array.
 
-function transform(arr) {
+// I don't know should the functions takes the value form based array
+// and then return this value always.
+// So I made universal function that recives the second bool parametr
+// if the second parametr is passed as a true value, it returns an array of functions
+// that return a new value if any value would change in the base array.
+
+// const newArray = transform(baseArray, true);
+// newArray[3](); // return 40
+// baseArray[3] = 'abc';
+// newArray[3](); // return 'abc'
+
+// if the second parametr isn't passed or it is a false value
+// changing values in the based array don't  influence 
+// on reterned values from the functions in the 
+// trnasformed array.
+
+// const newArray = transform(baseArray);
+// newArray[3](); // return 40
+// baseArray[3] = 'abc';
+// newArray[3](); // return 40
+
+function transform(arr, bool) {
     return arr.map( function(el, index) {
-        return function() {
-            return arr[index];
-        }
+        return (function() {
+            return bool ?  arr[index] : el;
+        })(el)
     });
 }

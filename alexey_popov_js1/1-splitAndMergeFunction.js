@@ -8,20 +8,13 @@
 // splitAndMerge("Hello World!",",") should return "H,e,l,l,o W,o,r,l,d,!"
 
 function splitAndMerge(str, sp) {
-    var sentenceSeparator = ' ';
-    // split the sentence into words
-    var wordsArr = str.split(sentenceSeparator); 
-    
-    //split each words into letters
-    wordsArr.forEach( function(el, index) {  
-      wordsArr[index] = el.split('');
-    });
-
-    // join the letters with the passed separator
-    wordsArr.forEach( function(el, index) {
-      wordsArr[index] = el.join(sp);
-    });
-    
-    // return joined words with the passed separator
-    return wordsArr.join(sp);
-}
+  return str.split(' ')
+      .map(function(el) {
+        return el.split('')
+      }
+    )
+      .map(function(el) {
+        return el.join(sp)
+      })
+      .join(sp)
+    }

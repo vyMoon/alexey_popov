@@ -7,19 +7,18 @@
 // 8 sum function with recursion
 
 function sum() {
-    //checks the first argument
-    // if it is an Array use it
-    // else  compound array of passed arguments
-    var numbers = Array.isArray( arguments[0] ) ? arguments[0] : Array.from( arguments );
-    // if there are no elements in the array or there is an elemetn that is not a number
-    // returns undefined
-    if (numbers.length == 0 || !numbers.every( function(el) {return typeof el == 'number'})) {
-        return undefined;
+    // get the array of passed arguments
+    var argsArr = Array.prototype.slice.call(arguments)
+    // if any not a number value or no arguments are passed
+    // it returns undefined
+    if (!argsArr.every( function(el) {return typeof el === 'number'}) || argsArr.length === 0) {
+      return undefined;
     }
-    // if there is only one element in the array return it
-    if (numbers.length == 1) {
-        return numbers.pop();
+    // if only one arguments, return it. base case
+    if (argsArr.length === 1) {
+      return argsArr[0];
     }
-    // adds the values of the elements using redcursion
-    return numbers.pop() + sum(numbers);
+    // recursive case
+    // I use apply as it receves an array of arguments
+    return argsArr.pop() + sum.apply( Object.create(null), argsArr )
 }
