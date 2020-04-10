@@ -7,14 +7,14 @@
 // 6 largest smallest functions
 
 function largest() {
-    return Array.from( arguments ).reduce( function (response, el) {
+    return Array.prototopy.slice.call( arguments ).reduce( function (response, el) {
         //choose bigger value
         return response < el ? el : response;
     });
   };
   
-  function smallest() {
-    return Array.from(  arguments ).reduce( function(response, el) {
+function smallest() {
+    return Array.prototype.slice.call(  arguments ).reduce( function(response, el) {
         //choose smaller value
         return response > el ? el : response;
     });
