@@ -31,12 +31,8 @@
 
 function transform(arr, bool) {
     return arr.map( function(el, index) {
-
-        return (function() {
-            return function() {
-                return bool ?  arr[index] : el;
-            }
-        })(el);
-
+      return function() {
+        return bool ? arr[index] : el;
+      }
     });
-}
+  }

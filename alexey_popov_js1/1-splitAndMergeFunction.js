@@ -9,12 +9,11 @@
 
 function splitAndMerge(str, sp) {
   return str.split(' ')
-      .map(function(el) {
+      .map( function(el) {
         return el.split('')
-      }
-    )
+      })
       .map(function(el) {
         return el.join(sp)
       })
-      .join(sp)
-    }
+      .join(' ');
+}

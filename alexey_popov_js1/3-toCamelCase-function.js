@@ -7,20 +7,11 @@
 
 // 3 toCamelCase function
 
+// split the string into words by regExp and then compound the response
+// reduce keep the first word and makes the first letter of the other words capitalized 
+
 function toCamelCase(str) {
-    // check dashes and underscore into the string
-    var dash = str.indexOf('-');
-    var underscore = str.indexOf('_');
-    // if there is no dashes or underscores into the string return string
-    if ( dash === -1 && underscore === -1 ) {
-      return str;
-    };
-    // chose the separator into the string 
-    // snd split the string into words
-    var separator = dash > -1 ? '-' : '_';
-    // makes the response. 
-    // compound the respond string and makes the first letter of each words capitalized exept the first one 
-    return str.split(separator).reduce( function(response, el) {
-      return response + el.charAt(0).toUpperCase() + el.slice(1);
+    return str.split(/-|_/).reduce( function(response, el, index) {
+      return response + el.charAt(0).toUpperCase() + el.slice(1)
     });
 }

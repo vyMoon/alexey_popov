@@ -8,7 +8,7 @@
 
 function sum() {
     // get the array of passed arguments
-    var argsArr = Array.prototype.slice.call(arguments)
+    var argsArr = Array.prototype.slice.call(arguments);
     // if any not a number value or no arguments are passed
     // it returns undefined
     if (!argsArr.every( function(el) {return typeof el === 'number'}) || argsArr.length === 0) {
@@ -20,5 +20,5 @@ function sum() {
     }
     // recursive case
     // I use apply as it receves an array of arguments
-    return argsArr.pop() + sum.apply( Object.create(null), argsArr )
+    return argsArr.pop() + sum.apply( null, argsArr );
 }

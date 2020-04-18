@@ -7,7 +7,7 @@
 // 6 largest smallest functions
 
 function largest() {
-    return Array.prototopy.slice.call( arguments ).reduce( function (response, el) {
+    return Array.prototype.slice.call( arguments ).reduce( function (response, el) {
         //choose bigger value
         return response < el ? el : response;
     });
